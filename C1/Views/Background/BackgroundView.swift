@@ -9,40 +9,40 @@ import SwiftUI
 
 struct BackgroundView: View {
     let stars: [Marker] = [
-        Marker(x: 35, y: 8),
-        Marker(x: 70, y: 115),
-        Marker(x: 310, y: 20)
+        Marker(x: 35, y: 75),
+        Marker(x: 70, y: 160),
+        Marker(x: 310, y: 80),
+        Marker(x: 270, y: 135),
+        Marker(x: 110, y: 100)
     ]
     
     var body: some View {
-        ZStack(alignment: .top) {
-            // MARK: Background Gradient
-            GeometryReader { geo in
+        GeometryReader { geo in
+            ZStack(alignment: .top) {
+                // MARK: Background Gradient
                 VStack(spacing: 0) {
                     SkyGradientLayer(heightSize: geo.size.height * 0.55)
                     SeaGradientLayer(heightSize: geo.size.height * 0.45)
                 }
-            }
-            .ignoresSafeArea()
-            
-            // MARK: Moon and MoonReflection
-            GeometryReader { geo in
+                
+                // MARK: Moon and MoonReflection
                 VStack(spacing: 0) {
+                    Color.clear.frame(height: geo.size.height * 0.05)
+                    
                     MoonView()
                     
-                    Color.clear.frame(height: geo.size.height * 0.45)
+                    Color.clear.frame(height: geo.size.height * 0.41)
                     
                     MoonReflectionView()
-                }.padding(.top, 20)
+                }
+                .padding(.top, 40)
+                
+                // MARK: Stars
+                ForEach(stars, id: \.self) { star in
+                    SparkleStarView(marker: star)
+                }
             }
-            
-            // MARK: Stars
-            ForEach(stars, id: \.self) { star in
-                StarView(marker: star)
-            }
-            SparkleStarView(marker: Marker(x: 270, y: 75))
-            SparkleStarView(marker: Marker(x: 110, y: 55))
-        }
+        }.ignoresSafeArea()
     }
 }
 

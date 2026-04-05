@@ -10,7 +10,11 @@ import SwiftUI
 struct SparkleStarView: View {
     @State private var isAnimating: Bool = false
     
-    var marker: Marker
+    let marker: Marker
+    
+    init(marker: Marker) {
+        self.marker = marker
+    }
     
     var body: some View {
         Circle()

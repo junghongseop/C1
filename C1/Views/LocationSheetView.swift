@@ -1,5 +1,5 @@
 //
-//  LocationView.swift
+//  LocationSheetView.swift
 //  C1
 //
 //  Created by 정홍섭 on 4/1/26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LocationView: View {
+struct LocationSheetView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
     
@@ -59,5 +59,5 @@ struct LocationView: View {
 }
 
 #Preview {
-    SecondView(navigationToActivity: .constant(false))
+    LocationSheetView(navigationToActivity: .constant(false))
 }
