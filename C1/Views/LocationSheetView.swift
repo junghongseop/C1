@@ -33,6 +33,16 @@ struct LocationSheetView: View {
                 .scaledToFit()
                 .cornerRadius(12)
             
+            HStack {
+                Text("추천")
+                    .bold()
+                
+                ForEach(0...4, id: \.self) { _ in
+                    Image(systemName: "star.fill")
+                        .foregroundStyle(.yellow)
+                }
+            }
+            
             Spacer()
             
             Button {
