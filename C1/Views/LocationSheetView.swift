@@ -45,21 +45,14 @@ struct LocationSheetView: View {
             
             Spacer()
             
-            Button {
+            Button("활동 인증하러 가기") {
                 dismiss()
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     navigationToActivity = true
                 }
-            } label: {
-                Text("활동 인증하러 가기")
-                    .padding(.vertical)
-                    .frame(maxWidth: .infinity)
-                    .background(Color("mediumLightBlue"))
-                    .foregroundStyle(.white)
-                    .cornerRadius(14)
-                    .fontWeight(.bold)
             }
+            .buttonStyle(PrimaryButtonStyle())
         }
         .padding(.top, 10)
         .padding(.bottom, 20)
