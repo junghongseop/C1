@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ActivityDatePicker: View {
-    @State var selectedDate = Date()
+    @Binding var selectedDate: Date
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("날짜")
+            Text("활동 날짜")
                 .foregroundStyle(.white)
                 .font(.system(size: 20, weight: .heavy))
             
@@ -32,5 +32,5 @@ struct ActivityDatePicker: View {
 }
 
 #Preview {
-    ActivityDatePicker()
+    ActivityDatePicker(selectedDate: .constant(Date()))
 }

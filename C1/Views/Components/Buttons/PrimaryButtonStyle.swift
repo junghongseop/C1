@@ -12,7 +12,7 @@ struct PrimaryButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .frame(maxWidth: .infinity, maxHeight: 50)
+            .frame(maxWidth: .infinity, maxHeight: 53)
             .background(isEnabled ? Color.accentColor : Color.blue.opacity(0.5))
             .foregroundStyle(isEnabled ? .white: .white.opacity(0.5))
             .cornerRadius(14)

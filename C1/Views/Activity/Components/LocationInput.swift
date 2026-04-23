@@ -10,7 +10,7 @@ import SwiftUI
 struct LocationInput: View {
     var isFocused: FocusState<Bool>.Binding
     
-    @State var location: String = ""
+    @Binding var location: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -40,5 +40,5 @@ struct LocationInput: View {
 #Preview {
     @FocusState var isFocused: Bool
     
-    LocationInput(isFocused: $isFocused)
+    LocationInput(isFocused: $isFocused, location: .constant("ddd"))
 }

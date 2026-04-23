@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		8EF4D4F72F7601120034C114 /* C1 */ = {
+		8E723C622F986CB50032574D /* C1 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = C1;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 		8EF4D4EC2F7601120034C114 = {
 			isa = PBXGroup;
 			children = (
-				8EF4D4F72F7601120034C114 /* C1 */,
+				8E723C622F986CB50032574D /* C1 */,
 				8EF4D4F62F7601120034C114 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +61,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				8EF4D4F72F7601120034C114 /* C1 */,
+				8E723C622F986CB50032574D /* C1 */,
 			);
 			name = C1;
 			packageProductDependencies = (

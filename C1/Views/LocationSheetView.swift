@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LocationSheetView: View {
+    let place: Place
+    
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.dismiss) var dismiss
     
@@ -15,33 +17,29 @@ struct LocationSheetView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text("포항공과대학교 C5")
-                    .font(.title)
+            HStack(alignment: .center) {
+                Text(place.name)
+                    .font(.system(size: 28))
                     .fontWeight(.bold)
+                
                 Spacer()
                 
                 Button(action: { dismiss() }) {
-                    Image(systemName: "xmark.circle.fill")
+                    Image(systemName: "xmark")
+                        .foregroundStyle(.black)
+                        .font(.system(size: 20))
                 }
-                .font(.system(size: 24, weight: .bold))
-                .foregroundStyle(.gray)
+                .padding(9)
+                .frame(width: 40, height: 40)
+                .background(.white.opacity(0.7))
+                .glassEffect(.clear)
+                .clipShape(Circle())
             }
             
-            Image("C5")
+            Image(place.image)
                 .resizable()
-                .scaledToFit()
+                .frame(maxWidth: .infinity, maxHeight: 240)
                 .cornerRadius(12)
-            
-            HStack {
-                Text("추천")
-                    .bold()
-                
-                ForEach(0...4, id: \.self) { _ in
-                    Image(systemName: "star.fill")
-                        .foregroundStyle(.yellow)
-                }
-            }
             
             Spacer()
             
@@ -62,5 +60,9 @@ struct LocationSheetView: View {
 }
 
 #Preview {
-    LocationSheetView(navigationToActivity: .constant(false))
+    LocationSheetView(
+        place: Place(
+            name: "C5", level: "1", image: "기청산식물원"),
+            navigationToActivity: .constant(false)
+        )
 }

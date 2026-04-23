@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct C1App: App {
@@ -13,6 +14,7 @@ struct C1App: App {
         WindowGroup {
             MainView()
         }
+        .modelContainer(for: [Bookmark.self, Record.self, MapPieceState.self])
     }
 }
 
